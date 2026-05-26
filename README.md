@@ -51,7 +51,9 @@ graph TD
 
 #### C. Unsupervised Analysis (Clustering K-Means)
 Algoritma K-Means mengelompokkan data ke dalam $K$ kelompok dengan meminimalkan jarak kuadrat antara titik data dengan pusat massa klaster (*centroid*). Jarak didefinisikan menggunakan jarak Euclidean dalam ruang vektor ternormalisasi:
+
 $$d(\mathbf{x}, \mathbf{\mu}_j) = \sqrt{\sum_{i=1}^{d} (x_i - \mu_{ji})^2}$$
+
 Eksperimen klasterisasi dilakukan pada rentang $K \in [2, 10]$. Evaluasi jumlah klaster optimal ditentukan secara bersamaan menggunakan dua metode:
 1. **Metode Elbow (Inersia):** Mengukur nilai *Within-Cluster Sum of Squares* (WCSS). Titik belok ("siku") dari penurunan WCSS menentukan jumlah klaster yang seimbang.
 2. **Silhouette Score:** Mengukur seberapa dekat setiap titik dalam klaster ke titik-titik di klaster tetangga. Nilai berkisar antara -1 hingga 1, di mana nilai lebih tinggi menunjukkan struktur pemisahan klaster yang lebih baik.
