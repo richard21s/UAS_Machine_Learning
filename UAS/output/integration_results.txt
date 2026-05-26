@@ -1,0 +1,8 @@
+=== INTEGRATION ANALYSIS ===
+Adjusted Rand Index (ARI): 0.0197
+Normalized Mutual Information (NMI): 0.0319
+
+Contingency Matrix (Revenue vs Cluster):
+               Cluster_0  Cluster_1  Cluster_2
+Revenue_False        926       8197       1174
+Revenue_True           6       1450        452
