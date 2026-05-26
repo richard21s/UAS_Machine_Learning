@@ -47,7 +47,7 @@ graph TD
    - **Klasifikasi Supervised:** Seluruh fitur input (termasuk fitur numerik dan variabel biner hasil encoding) diskalakan menggunakan `StandardScaler`. Langkah ini krusial untuk kestabilan algoritma berbasis gradien seperti Artificial Neural Network (MLP) dan metode berbasis kovariansi seperti LDA.
 4. **Analisis Korelasi Fitur:** Matriks korelasi Pearson (Heatmap) dihitung untuk seluruh fitur numerik utama belanja pengunjung guna mendeteksi kekuatan hubungan linear awal dan potensi multikolinieritas, seperti diperlihatkan pada **Gambar 1** di bawah ini. Dari matriks ini, terlihat korelasi positif kuat antara durasi sesi belanja dengan jumlah halaman yang dikunjungi (`ProductRelated_Duration` dengan `ProductRelated`), serta korelasi linear terkuat variabel target dengan `PageValues`.
 
-![Gambar 1: Matriks Korelasi Pearson (Heatmap) Fitur Numerik Utama Belanja](plots/correlation_matrix.png)
+![Gambar 1: Matriks Korelasi Pearson (Heatmap) Fitur Numerik Utama Belanja](UAS/plots/correlation_matrix.png)
 
 #### C. Unsupervised Analysis (Clustering K-Means)
 Algoritma K-Means mengelompokkan data ke dalam $K$ kelompok dengan meminimalkan jarak kuadrat antara titik data dengan pusat massa klaster (*centroid*). Jarak didefinisikan menggunakan jarak Euclidean dalam ruang vektor ternormalisasi:
