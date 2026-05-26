@@ -84,7 +84,7 @@ Analisis integrasi bertujuan untuk menguji apakah pengelompokan alami pelanggan 
 #### A. Penentuan Jumlah Klaster Optimal
 Analisis perbandingan metode Elbow dan Silhouette Score untuk jumlah klaster $K \in [2, 10]$ dirangkum pada grafik di bawah ini (**Gambar 2**):
 
-![Gambar 2: Evaluasi Kurva Elbow (Inersia) dan Silhouette Score untuk Menentukan Jumlah Klaster Optimal (K=3)](plots/elbow_silhouette.png)
+![Gambar 2: Evaluasi Kurva Elbow (Inersia) dan Silhouette Score untuk Menentukan Jumlah Klaster Optimal (K=3)](UAS/plots/elbow_silhouette.png)
 
 *   **Analisis Elbow:** Penurunan inersia (WCSS) menunjukkan penurunan yang sangat tajam dari $K=2$ ke $K=3$, dan mulai melandai secara konsisten setelah $K=3$.
 *   **Analisis Silhouette:** Silhouette score mencapai nilai lokal maksimum yang cukup tinggi pada $K=3$ (skor $\approx 0.45$), sebelum terus menurun pada klaster yang lebih besar ($K > 4$ memiliki Silhouette $\approx 0.35 - 0.39$). 
@@ -94,7 +94,7 @@ Berdasarkan kedua indikator tersebut, **$K=3$ dipilih sebagai jumlah klaster opt
 #### B. Profiling Karakteristik Tiap Klaster
 Setelah melakukan fitting model K-Means pada $K=3$, karakteristik setiap klaster dianalisis berdasarkan rata-rata fitur perilaku belanja numerik dan laju konversi pembelian aktual (`Revenue_Rate`). Data profil ini disimpan dalam `output/cluster_profiles.csv` dan divisualisasikan pada **Gambar 3** berikut:
 
-![Gambar 3: Profiling Karakteristik Fitur Perilaku Belanja Utama dan Laju Konversi pada Setiap Klaster](plots/cluster_profiling.png)
+![Gambar 3: Profiling Karakteristik Fitur Perilaku Belanja Utama dan Laju Konversi pada Setiap Klaster](UAS/plots/cluster_profiling.png)
 
 | Metrik / Karakteristik | Klaster 0 | Klaster 1 | Klaster 2 |
 | :--- | :---: | :---: | :---: |
@@ -121,7 +121,7 @@ Setelah melakukan fitting model K-Means pada $K=3$, karakteristik setiap klaster
 
 ### III. KOMPARASI SUPERVISED
 
-Tahap klasifikasi supervised mengevaluasi kemampuan model dalam memprediksi kelas target `Revenue` (apakah sesi menghasilkan pembelian atau tidak). Evaluasi kinerja model pada *Test Set* (20% data uji, setara dengan 2.441 sesi) disajikan pada tabel di bawah ini (data lengkap tersimpan di `output/supervised_comparison.csv`):
+Tahap klasifikasi supervised mengevaluasi kemampuan model dalam memprediksi kelas target `Revenue` (apakah sesi menghasilkan pembelian atau tidak). Evaluasi kinerja model pada *Test Set* (20% data uji, setara dengan 2.441 sesi) disajikan pada tabel di bawah ini (data lengkap tersimpan di `UAS/output/supervised_comparison.csv`):
 
 #### A. Tabel Perbandingan Kinerja Klasifikasi (Test Set)
 
@@ -137,9 +137,9 @@ Tahap klasifikasi supervised mengevaluasi kemampuan model dalam memprediksi kela
 #### B. Analisis Visual Performa Model
 Evaluasi visual performa model klasifikasi disajikan melalui Kurva ROC (**Gambar 4**) dan diagram batang komparasi metrik (**Gambar 5**) berikut:
 
-![Gambar 4: Perbandingan Kurva ROC (Receiver Operating Characteristic) Model Klasik vs Modern](plots/roc_curves.png)
+![Gambar 4: Perbandingan Kurva ROC (Receiver Operating Characteristic) Model Klasik vs Modern](UAS/plots/roc_curves.png)
 
-![Gambar 5: Perbandingan Metrik Evaluasi Kinerja (Accuracy, Precision, Recall, F1-Score) Klasifikasi Model Klasik vs Modern](plots/supervised_comparison.png)
+![Gambar 5: Perbandingan Metrik Evaluasi Kinerja (Accuracy, Precision, Recall, F1-Score) Klasifikasi Model Klasik vs Modern](UAS/plots/supervised_comparison.png)
 
 Kurva ROC dan diagram perbandingan metrik di atas menunjukkan perbedaan signifikan antara model klasik dan modern:
 - Kurva ROC LDA, Logistic Regression, dan MLP ANN berhimpit erat dengan nilai AUC di kisaran **0.90**, menunjukkan kemampuan diskriminasi probabilitas yang sangat kuat.
